@@ -1,10 +1,10 @@
 'use strict';
-var theme = function() {
+var theme = function () {
 
     // prevent empty links
     // ---------------------------------------------------------------------------------------
     function handlePreventEmptyLinks() {
-        $('a[href=#]').click(function(event) {
+        $('a[href=#]').click(function (event) {
             event.preventDefault();
         });
     }
@@ -26,10 +26,10 @@ var theme = function() {
     function handleHoverClass() {
         var hover = $('.thumbnail');
         hover.hover(
-            function() {
+            function () {
                 $(this).addClass('hover');
             },
-            function() {
+            function () {
                 $(this).removeClass('hover');
             }
         );
@@ -39,11 +39,11 @@ var theme = function() {
     // ---------------------------------------------------------------------------------------
     function handleSuperFish() {
         $('ul.sf-menu').superfish();
-        $('ul.sf-menu a').click(function() {
+        $('ul.sf-menu a').click(function () {
             $('body').scrollspy('refresh');
         });
         // fixed menu toggle
-        $('.menu-toggle').on('click', function() {
+        $('.menu-toggle').on('click', function () {
             if ($('.navigation').hasClass('opened')) {
                 $(this).find('.fa').removeClass('fa-times').addClass('fa-bars');
                 $('.navigation').removeClass('opened').addClass('closed');
@@ -53,10 +53,10 @@ var theme = function() {
             }
         });
         // submenu fix
-        $('.mobile-submenu').click(function() {
+        $('.mobile-submenu').click(function () {
             $(this).parent().toggleClass('mobile-submenu-open');
         });
-        $('ul.sf-menu a').click(function() {
+        $('ul.sf-menu a').click(function () {
             $('ul.sf-menu li').removeClass('mobile-submenu-open');
         });
     }
@@ -64,7 +64,7 @@ var theme = function() {
     // Smooth scrolling
     // ---------------------------------------------------------------------------------------
     function handleSmoothScroll() {
-        $('.sf-menu a, .scroll-to').click(function() {
+        $('.sf-menu a, .scroll-to').click(function () {
 
             //var headerH = $('header').outerHeight();
             var headerH = 0;
@@ -73,9 +73,9 @@ var theme = function() {
             $('html, body').animate({
                 scrollTop: $($(this).attr('href')).offset().top - headerH + 'px'
             }, {
-                duration: 1200,
-                easing: 'easeInOutExpo'
-            });
+                    duration: 1200,
+                    easing: 'easeInOutExpo'
+                });
             return false;
         });
     }
@@ -91,14 +91,14 @@ var theme = function() {
     // Scroll totop button
     // ---------------------------------------------------------------------------------------
     function handleToTopButton() {
-        $(window).scroll(function() {
+        $(window).scroll(function () {
             if ($(this).scrollTop() > 1) {
                 $('.to-top').css({ bottom: '15px' });
             } else {
                 $('.to-top').css({ bottom: '-100px' });
             }
         });
-        $('.to-top').click(function() {
+        $('.to-top').click(function () {
             $('html, body').animate({ scrollTop: '0px' }, 800);
             return false;
         });
@@ -106,7 +106,7 @@ var theme = function() {
 
     // preloader
     // ---------------------------------------------------------------------------------------
-    $(window).load(function() {
+    $(window).load(function () {
         $('#status').fadeOut();
         $('#preloader').delay(200).fadeOut(100);
     });
@@ -124,12 +124,12 @@ var theme = function() {
                 header.removeClass('shrink');
             }
         };
-        $(window).load(function() { refresh(); });
-        $(window).scroll(function() { refresh(); });
-        $(window).on('touchstart', function() { refresh(); });
-        $(window).on('scrollstart', function() { refresh(); });
-        $(window).on('scrollstop', function() { refresh(); });
-        $(window).on('touchmove', function() { refresh(); });
+        $(window).load(function () { refresh(); });
+        $(window).scroll(function () { refresh(); });
+        $(window).on('touchstart', function () { refresh(); });
+        $(window).on('scrollstart', function () { refresh(); });
+        $(window).on('scrollstop', function () { refresh(); });
+        $(window).on('touchmove', function () { refresh(); });
 
     }
 
@@ -138,7 +138,7 @@ var theme = function() {
     function handleTabsFAQ() {
         if ($('#tabs-faq').length) {
             var tabs = $('#tabs-faq');
-            tabs.find('a').on('click', function() {
+            tabs.find('a').on('click', function () {
                 tabs.find('.fa-angle-right').removeClass('fa-angle-right').addClass('fa-plus');
                 $(this).find('.fa').removeClass('fa-plus').addClass('fa-angle-right');
             });
@@ -149,12 +149,12 @@ var theme = function() {
     // ---------------------------------------------------------------------------------------
     function resizePage() {
         if ($('body').hasClass('boxed')) {
-            $('#main-slider').find('.page').each(function() {
+            $('#main-slider').find('.page').each(function () {
                 $(this).removeAttr('style');
             });
         }
         if ($('body').hasClass('coming-soon')) {
-            $('#main-slider').find('.page').each(function() {
+            $('#main-slider').find('.page').each(function () {
                 $(this).removeAttr('style');
                 $('.page').css('min-height', $(window).height());
             });
@@ -166,13 +166,14 @@ var theme = function() {
         $('.partners-carousel .owl-carousel').trigger('refresh');
     }
 
+
     // INIT FUNCTIONS
     // ---------------------------------------------------------------------------------------
     return {
-        onResize: function() {
+        onResize: function () {
             resizePage();
         },
-        init: function() {
+        init: function () {
             handlePreventEmptyLinks();
             handlePlaceholdem();
             handleBootstrapSelect();
@@ -185,7 +186,7 @@ var theme = function() {
             handleTabsFAQ();
         },
         // Main Slider
-        initMainSlider: function() {
+        initMainSlider: function () {
             $('#main-slider').owlCarousel({
                 //items: 1,
                 autoplay: true,
@@ -210,7 +211,7 @@ var theme = function() {
 
         },
         // CountDown
-        initCountDown: function() {
+        initCountDown: function () {
             var austDay = new Date();
             austDay = new Date(austDay.getFullYear() + 1, 1 - 1, -32);
             austDay = new Date(2017, 2, 31);
@@ -218,7 +219,7 @@ var theme = function() {
             $('#year').text(austDay.getFullYear());
         },
         // Partners Slider
-        initPartnerSlider: function() {
+        initPartnerSlider: function () {
             $('.partners-carousel .owl-carousel').owlCarousel({
                 autoplay: true,
                 loop: true,
@@ -239,7 +240,7 @@ var theme = function() {
             });
         },
         // Partners Slider
-        initEventCarousel: function() {
+        initEventCarousel: function () {
             $('.event-carousel .owl-carousel').owlCarousel({
                 autoplay: false,
                 loop: false,
@@ -260,7 +261,7 @@ var theme = function() {
             });
         },
         // Testimonials
-        initTestimonials: function() {
+        initTestimonials: function () {
             $('#testimonials').owlCarousel({
                 items: 1,
                 autoplay: true,
@@ -274,17 +275,17 @@ var theme = function() {
             });
         },
         // Animation on Scroll
-        initAnimation: function() {
+        initAnimation: function () {
             var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             if (isMobile == false) {
                 $('*[data-animation]').addClass('animated');
-                $('.animated').waypoint(function(down) {
+                $('.animated').waypoint(function (down) {
                     var elem = $(this);
                     var animation = elem.data('animation');
                     if (!elem.hasClass('visible')) {
                         var animationDelay = elem.data('animation-delay');
                         if (animationDelay) {
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 elem.addClass(animation + ' visible');
                             }, animationDelay);
                         } else {
@@ -292,17 +293,17 @@ var theme = function() {
                         }
                     }
                 }, {
-                    offset: $.waypoints('viewportHeight')
+                        offset: $.waypoints('viewportHeight')
                         //offset: 'bottom-in-view'
                         //offset: '95%'
-                });
+                    });
             }
             // Refresh Waypoints on tab click / animation
-            $('#tabs-lv1 li a[data-toggle="tab"]').on('shown.bs.tab', function() { $.waypoints('refresh'); });
-            $('#tabs-lv2 li a[data-toggle="tab"]').on('shown.bs.tab', function() { $.waypoints('refresh'); });
+            $('#tabs-lv1 li a[data-toggle="tab"]').on('shown.bs.tab', function () { $.waypoints('refresh'); });
+            $('#tabs-lv2 li a[data-toggle="tab"]').on('shown.bs.tab', function () { $.waypoints('refresh'); });
         },
         // Google map
-        initGoogleMap: function() {
+        initGoogleMap: function () {
             var map;
             var marker;
             var image = 'assets/img/icon-google-map.png'; // marker icon
@@ -310,20 +311,94 @@ var theme = function() {
                 var mapOptions = {
                     scrollwheel: false,
                     zoom: 14,
-                    center: new google.maps.LatLng(9.000825, 38.7409708) // map coordinates   40.9807648, 28.9866516
+                    center: new google.maps.LatLng(8.9999192,38.7441701) // map coordinates   40.9807648, 28.9866516
                 };
                 map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
                 marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(9.000825, 38.7409708), // marker coordinates 41.0096559,28.9755535
+                    position: new google.maps.LatLng(8.9999192,38.7441701), // marker coordinates 41.0096559,28.9755535
                     map: map,
                     icon: image,
                     title: 'African Union Headquarter, Roosvelt Street (Old Airport Area), Addis Ababa Ethiopia'
                 });
+
             }
             google.maps.event.addDomListener(window, 'load', initialize);
-        }
+        },
+        getDirectionOnMap: function (source) {
+            var map;
+            var marker;
+            var directionsDisplay;
+            var directionsService = new google.maps.DirectionsService();
 
+            var image = 'assets/img/icon-google-map.png'; // marker icon
+            function initialize(callback) {
+
+                directionsDisplay = new google.maps.DirectionsRenderer();
+
+                var mapOptions = {
+                    scrollwheel: true,
+                    zoom: 14,
+                    center: new google.maps.LatLng(8.9999192, 38.7441701) // map coordinates   40.9807648, 28.9866516
+                };
+
+
+                map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
+                marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(8.9999192, 38.7441701), // marker coordinates 41.0096559,28.9755535
+                    map: map,
+                    icon: image,
+                    title: 'African Union Headquarter, Roosvelt Street (Old Airport Area), Addis Ababa Ethiopia'
+                });
+
+                directionsDisplay.setMap(map);
+
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(function (position) {
+                        var pos = {
+                            lat: position.coords.latitude,
+                            lng: position.coords.longitude
+                        };
+
+                        //window.location.href = "https://www.google.com/maps?saddr=Africian%2BUnion%2BConference%2BHall&daddr=@" + pos.lat + "," + pos.lng;
+                        callback(pos);
+                        //map.setCenter(pos);
+                    }, function () {
+                        handleLocationError(true, infoWindow, map.getCenter());
+                    });
+                } else {
+                    // Browser doesn't support Geolocation
+                    handleLocationError(false, infoWindow, map.getCenter());
+                }
+
+
+
+            }
+
+            function calcRoute(pos) {
+                
+                var start = '' + pos.lat + ',' + pos.lng;// 'Addis Ababa, Ethiopia';//'@9.12,38.044113';
+                var end = '8.9999192,38.7441701';
+                var request = {
+                    origin: start,
+                    destination: end,
+                    travelMode: 'DRIVING'
+                };
+                
+                directionsService.route(request, function (result, status) {
+                    if (status == 'OK') {
+                        directionsDisplay.setDirections(result);
+                    }
+                });
+            }
+
+            initialize(function(pos){
+                calcRoute(pos);
+            });
+
+            //google.maps.event.addDomListener(window, 'load', initialize);
+        }
     };
 
 }();

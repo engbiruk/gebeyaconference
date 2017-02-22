@@ -26,7 +26,7 @@
     <link href="assets/plugins/prettyphoto/css/prettyPhoto.css" rel="stylesheet">
     <link href="assets/plugins/animate/animate.min.css" rel="stylesheet">
     <link href="assets/plugins/countdown/jquery.countdown.css" rel="stylesheet">
-
+    
     <link href="assets/css/theme.css" rel="stylesheet">
     <link href="assets/css/custom.css" rel="stylesheet">
     <link href="assets/css/theme-purple-1.css" rel="stylesheet" id="theme-config-link">
@@ -122,7 +122,8 @@
                                                     <div id="defaultCountdown" class="defaultCountdown clearfix"></div>
                                                 </div>
                                                 <p class="caption-text">
-                                                    <a class="btn btn-theme btn-theme-xl scroll-to" href="https://gebeyaconference.eventbrite.com/" target="_blank" data-animation="flipInY" data-animation-delay="600"> Register <i class="fa fa-arrow-circle-right"></i></a>
+                                                    <a class="btn btn-theme btn-theme-xl scroll-to" href="https://gebeyaconference.eventbrite.com/" target="_blank" data-animation="flipInY"
+                                                        data-animation-delay="600"> Register <i class="fa fa-arrow-circle-right"></i></a>
                                                 </p>
                                             </div>
                                         </div>
@@ -205,29 +206,37 @@
             <div class="row">
                 <div class="col-lg-8">
                     <p data-animation="fadeInUp" data-animation-delay="300">
-                        <b>Gebeya IT Academy</b> iis hosting a Software Developer Conference on 31st of March to 1st of April at the African Union Headquarter in Addis Ababa, Ethiopia. The conference aims to illuminate and showcase the innumerable opportunities that exist within Ethiopia’s ever growing tech and entrepreneurship space. 
-                        
-                        <br/><br/> 
-                        The Software Developer Conference is a  multi-track event covering topics leading the digital industry all across the world: Mobile, Security, Cloud, API Economy, Internet of Things (IoT), Artificial Intelligence (AI), Drone Tech, FinTech, Wireless Tech, Cryptography, Networks, Big Data, Enterprise Architecture and Integrated systems.  Attendees will be taken through a series of workshops, demos, trainings and interventions from both multinational and local technology company leaders. 
+                        <b>Gebeya IT Academy</b> iis hosting a Software Developer Conference on 31st of March to 1st of April
+                        at the African Union Headquarter in Addis Ababa, Ethiopia. The conference aims to illuminate and
+                        showcase the innumerable opportunities that exist within Ethiopia’s ever growing tech and entrepreneurship
+                        space.
 
-                        <br/><br/> 
-                        Designed for tech enthusiasts and practitioners, The Software Developer Conference welcomes all software and application developers, IT professionals, techies, startups technopreneurs and computer science students to attend and share knowledge about new breakthrough technologies.
-                        
+                        <br/><br/> The Software Developer Conference is a multi-track event covering topics leading the digital
+                        industry all across the world: Mobile, Security, Cloud, API Economy, Internet of Things (IoT), Artificial
+                        Intelligence (AI), Drone Tech, FinTech, Wireless Tech, Cryptography, Networks, Big Data, Enterprise
+                        Architecture and Integrated systems. Attendees will be taken through a series of workshops, demos,
+                        trainings and interventions from both multinational and local technology company leaders.
+
+                        <br/><br/> Designed for tech enthusiasts and practitioners, The Software Developer Conference welcomes
+                        all software and application developers, IT professionals, techies, startups technopreneurs and computer
+                        science students to attend and share knowledge about new breakthrough technologies.
+
                         <br/><br/>
                         <b>Benefits</b>
-                            <ui>
-                                <li>Networking Opportunities With Industry Experts and Influencers</li>
-                                <li>Recertification</li>
-                                <li>Learning New Tips and Tricks</li>
-                                <li>Gracing The First Tech Event At The African Union</li>
-                            </ui>
-                        </p>
+                        <ui>
+                            <li>Networking Opportunities With Industry Experts and Influencers</li>
+                            <li>Recertification</li>
+                            <li>Learning New Tips and Tricks</li>
+                            <li>Gracing The First Tech Event At The African Union</li>
+                        </ui>
+                    </p>
                     <p class="btn-row">
-                        <a href="https://gebeyaconference.eventbrite.com/" target="_blank" class="btn btn-theme btn-theme-xl scroll-to" data-animation="flipInY" data-animation-delay="200">Register <i class="fa fa-arrow-circle-right"></i></a>
-                        <!--
+                        <a href="https://gebeyaconference.eventbrite.com/" target="_blank" class="btn btn-theme btn-theme-xl scroll-to" data-animation="flipInY"
+                            data-animation-delay="200">Register <i class="fa fa-arrow-circle-right"></i></a>
+                            <!--
                         -->
-                        <!-- a href="#" class="btn btn-theme btn-theme-xl btn-theme-transparent" data-animation="flipInY" data-animation-delay="400"-->
-                        </a>
+                            <!-- a href="#" class="btn btn-theme btn-theme-xl btn-theme-transparent" data-animation="flipInY" data-animation-delay="400"-->
+                            </a>
                     </p>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 pull-left">
@@ -2851,10 +2860,11 @@
                         <span data-animation="fadeInRight" data-animation-delay="100" class="title-inner">Event Location</span>
                     </h1>
                     <p data-animation="fadeInUp" data-animation-delay="200" class="text-uppercase">
-                        <b>African Union Headquarter</b> <br /> Roosvelt Street<br/> (Old Airport Area), <br /> W21K19 | Addis Ababa, Ethiopia<br />
+                        <b>African Union Headquarter</b> <br /> Roosvelt Street<br/> (Old Airport Area), <br /> W21K19 |
+                        Addis Ababa, Ethiopia<br />
                     </p>
                     <p><a href="mailto:info@gebeya.com">info@gebeya.com</a></p>
-                    <a href="#" class="btn btn-theme" data-animation="flipInY" data-animation-delay="300">Get Direction<i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="#" class="btn btn-theme" data-animation="flipInY" data-animation-delay="300" onclick="theme.getDirectionOnMap(this)">Get Direction<i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
 
@@ -2937,7 +2947,7 @@
     <script src="assets/js/custom.js"></script>
 
     <script type="text/javascript">
-        jQuery(document).ready(function() {
+        jQuery(document).ready(function () {
             theme.init();
             theme.initMainSlider();
             theme.initCountDown();
@@ -2945,48 +2955,48 @@
             theme.initTestimonials();
             theme.initGoogleMap();
         });
-        jQuery(window).load(function() {
+        jQuery(window).load(function () {
             theme.initAnimation();
         });
 
-        jQuery(window).load(function() {
+        jQuery(window).load(function () {
             jQuery('body').scrollspy({
                 offset: 100,
                 target: '.navigation'
             });
         });
-        jQuery(window).load(function() {
+        jQuery(window).load(function () {
             jQuery('body').scrollspy('refresh');
         });
-        jQuery(window).resize(function() {
+        jQuery(window).resize(function () {
             jQuery('body').scrollspy('refresh');
         });
 
-        jQuery(document).ready(function() {
+        jQuery(document).ready(function () {
             theme.onResize();
         });
-        jQuery(window).load(function() {
+        jQuery(window).load(function () {
             theme.onResize();
         });
-        jQuery(window).resize(function() {
+        jQuery(window).resize(function () {
             theme.onResize();
         });
 
-        jQuery(window).load(function() {
+        jQuery(window).load(function () {
             if (location.hash != '') {
                 var hash = '#' + window.location.hash.substr(1);
                 if (hash.length) {
                     jQuery('html,body').delay(0).animate({
                         scrollTop: jQuery(hash).offset().top - 44 + 'px'
                     }, {
-                        duration: 1200,
-                        easing: "easeInOutExpo"
-                    });
+                            duration: 1200,
+                            easing: "easeInOutExpo"
+                        });
                 }
             }
         });
     </script>
-
+    
 </body>
 
 </html>
