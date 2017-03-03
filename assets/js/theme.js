@@ -337,7 +337,7 @@ var theme = function () {
                 directionsDisplay = new google.maps.DirectionsRenderer();
 
                 var mapOptions = {
-                    scrollwheel: true,
+                    scrollwheel: false,
                     zoom: 14,
                     center: new google.maps.LatLng(8.9999192, 38.7441701) // map coordinates   40.9807648, 28.9866516
                 };
